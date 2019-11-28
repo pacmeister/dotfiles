@@ -1,0 +1,8 @@
+#xrandr --output DP-2 --primary --scale 1.5x1.5 --pos 0x0 --auto --dpi 192 #\
+#--output HDMI-0 --rotate right --pos 3840x0 --auto --scale 1x1
+#export PLASMA_USE_QT_SCALING=1
+export GDK_SCALE=1.25
+xrandr --output DP-2 --scale 1.25x1.25 --pos 0x0 --auto --dpi 160
+devilspie2 &
+sxhkd &
+dropbox &

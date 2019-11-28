@@ -1,0 +1,16 @@
+Config { font = "xft:Iosevka:size=10"
+       , lowerOnStart = True
+       , persistent = True
+       , hideOnStart = False
+       , overrideRedirect = True
+       , commands = [ Run DynNetwork     [] 10
+		    , Run Cpu [] 10
+                    , Run Memory [] 10
+                    , Run Date "%a %b %_d %Y %H:%M" "date" 10
+                    , Run Battery ["-t", "Batt: <left>% / <timeleft>"] 120
+                    , Run StdinReader
+                    ]
+       , sepChar = "%"
+       , alignSep = "}{"
+       , template = "%battery% | %cpu% | %memory% | %dynnetwork% }{ %date%"
+       }
