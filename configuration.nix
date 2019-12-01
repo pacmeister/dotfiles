@@ -25,12 +25,10 @@
             canTouchEfiVariables = true;
             efiSysMountPoint = "/boot/";
         };
-        grub = {
-            devices = [ "nodev" ];
-            efiSupport = true;
+        systemd-boot = {
+            configurationLimit = 4;
             enable = true;
-            version = 2;
-            configurationLimit = 2;
+            memtest86.enable = true;
         };
     };
 
@@ -39,7 +37,7 @@
     networking.hostName = "nixos";
     networking.nameservers = [ "1.1.1.1" ];
     networking.networkmanager.enable = true;
-    networking.extraHosts = builtins.readFile /etc/nixos/hosts;
+    networking.extraHosts = builtins.readFile ./hosts;
 
     i18n = {
         consoleFont = "Lat2-Terminus16";
