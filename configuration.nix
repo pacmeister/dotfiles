@@ -16,7 +16,7 @@
 
     virtualisation.libvirtd.enable = true;
 
-    boot.kernelPackages = pkgs.linuxPackages_latest_hardened;
+    boot.kernelPackages = pkgs.linuxPackages;
     boot.kernelModules = [ "fuse" "kvm-intel" "coretemp" ];
     boot.supportedFilesystems = [ "xfs" "ext4" ];
 
@@ -55,7 +55,7 @@
     devilspie2 dropbox efibootmgr exa zsh firejail gcc gdb gforth git gnumake
     gnupg gnuplot google-chrome gptfdisk handbrake htop imagemagick kdialog
     keepassxc kvm ldc libreoffice-fresh lolcat lsof lua lynx mpv neofetch neovim
-    okular openssh p7zip pandoc pinta pv qemu rc spectacle stockfish cryptsetup
+    okular openssh p7zip pandoc pinta pv qemu rc scrot stockfish cryptsetup
     texlive.combined.scheme-small tmux transmission-gtk unrar unzip usbutils
     virtmanager weechat xorg.xhost zip leafpad usbutils sxhkd ghc arc-theme
     (import ./st.nix)
@@ -76,7 +76,7 @@
     '';
     systemd.user.services.mpd.enable = true;
 
-    # services.printing.drivers = [ pkgs.brgenml1cupswrapper ];
+    #services.printing.drivers = [ pkgs.brgenml1cupswrapper ];
     services.printing.enable = true;
 
     services.xserver = {

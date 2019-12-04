@@ -13,7 +13,6 @@ git_prompt(){
 }
 
 RPROMPT='$(git_prompt)%F{244} %F{reset}'
-#PROMPT="%F{gray}%(1j %F{green} )>%F{gray}%(?  %F{red})>%F{gray} "
 
 zstyle ':completion:*' menu select
 zstyle ':completion::complete:*' gain-privileges 1
