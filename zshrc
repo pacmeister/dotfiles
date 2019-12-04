@@ -12,6 +12,7 @@ git_prompt(){
   if test ! -z "$(git status -s 2>/dev/null)"; then echo " %F{red}*"; fi
 }
 
+PROMPT='%# '
 RPROMPT='$(git_prompt)%F{244} %F{reset}'
 
 zstyle ':completion:*' menu select
