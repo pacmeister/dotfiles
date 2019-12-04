@@ -52,7 +52,7 @@
     environment.systemPackages = with pkgs;
     [
     ack ahoviewer ark bash bc binutils cmatrix cmus conda cryfs deadbeef
-    devilspie2 dropbox efibootmgr exa fish firejail gcc gdb gforth git gnumake
+    devilspie2 dropbox efibootmgr exa zsh firejail gcc gdb gforth git gnumake
     gnupg gnuplot google-chrome gptfdisk handbrake htop imagemagick kdialog
     keepassxc kvm ldc libreoffice-fresh lolcat lsof lua lynx mpv neofetch neovim
     okular openssh p7zip pandoc pinta pv qemu rc spectacle stockfish cryptsetup
@@ -68,6 +68,7 @@
 
     programs.adb.enable = true;
     programs.bash.enableCompletion = true;
+    programs.zsh.enableCompletion = true;
     programs.gnupg.agent = { enable = true; enableSSHSupport = true; };
 
     systemd.extraConfig = ''

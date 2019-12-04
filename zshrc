@@ -1,3 +1,4 @@
+#!/usr/bin/env zsh
 autoload -Uz compinit; compinit
 autoload -Uz colors; colors
 autoload -Uz up-line-or-beginning-search
