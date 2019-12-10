@@ -8,11 +8,11 @@ setopt COMPLETE_ALIASES
 setopt PROMPT_SUBST
 
 git_prompt(){
-  echo -n "%F{yellow}"$(git branch 2>/dev/null | sed -e '/^[^*]/d' -e 's/*\(.*\)/\1/')
-  if test ! -z "$(git status -s 2>/dev/null)"; then echo " %F{red}*"; fi
+  echo -n "%F{cyan}"$(git branch 2>/dev/null | sed -e '/^[^*]/d' -e 's/*\(.*\)/\1/')
+  if test ! -z "$(git status -s 2>/dev/null)"; then echo " %F{magenta}*"; fi
 }
 
-PROMPT='%# '
+PROMPT='%F{cyan}%# %F{reset}'
 RPROMPT='$(git_prompt)%F{244} %F{reset}'
 
 zstyle ':completion:*' menu select
