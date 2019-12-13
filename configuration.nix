@@ -16,7 +16,7 @@
 
     virtualisation.libvirtd.enable = true;
 
-    boot.kernelPackages = pkgs.linuxPackages;
+    boot.kernelPackages = pkgs.linuxPackages_latest_hardened;
     boot.kernelModules = [ "fuse" "kvm-intel" "coretemp" ];
     boot.supportedFilesystems = [ "xfs" "ext4" ];
 
