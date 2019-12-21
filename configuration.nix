@@ -57,7 +57,7 @@
     keepassxc kvm ldc libreoffice-fresh lolcat lsof lua lynx mpv neofetch neovim
     okular openssh p7zip pandoc pinta pv qemu rc scrot stockfish cryptsetup
     texlive.combined.scheme-small tmux transmission-gtk unrar unzip usbutils
-    virtmanager weechat xorg.xhost zip leafpad usbutils sxhkd ghc arc-theme
+    virtmanager weechat xorg.xhost zip usbutils sxhkd ghc arc-theme textadept
     (import ./st.nix)
     ];
 
