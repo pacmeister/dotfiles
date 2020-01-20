@@ -64,4 +64,4 @@ alias tree="exa -T"
 alias upgrade="sudo cp ~/git/dotfiles/configuration.nix /etc/nixos && sudo nix-channel --update && sudo nix-collect-garbage -d && sudo nixos-rebuild switch --upgrade"
 alias clear="clear && tmux clear-history"
 
-source ~/.extras.sh
+#source ~/.extras.sh
