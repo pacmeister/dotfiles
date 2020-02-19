@@ -3,12 +3,6 @@
 {
     imports = [ ./hardware-configuration.nix ./extra_services.nix ];
 
-    fileSystems."/home/pac/Dropbox" =
-    {
-        device = "/home/pac/dropbox.img";
-        fsType = "ext4";
-    };
-
     hardware.cpu.intel.updateMicrocode = true;
     hardware.pulseaudio.enable = true;
 
@@ -49,52 +43,47 @@
 
     nixpkgs.config.allowUnfree = true;
 
-    environment.systemPackages = with pkgs;
-    [
-    ack ahoviewer ark bash bc binutils cmatrix cmus conda cryfs deadbeef
-    devilspie2 dropbox efibootmgr exa zsh firejail gcc gdb gforth git gnumake
-    gnupg gnuplot google-chrome gptfdisk handbrake htop imagemagick kdialog
-    keepassxc kvm ldc libreoffice-fresh lolcat lsof lua lynx mpv neofetch neovim
-    okular openssh p7zip pandoc pinta pv qemu rc scrot stockfish cryptsetup
-    texlive.combined.scheme-small tmux transmission-gtk unrar unzip usbutils
-    virtmanager weechat xorg.xhost zip usbutils sxhkd ghc arc-theme scite R
-    (import ./st.nix)
+    environment.systemPackages = with pkgs; [
+        ack ahoviewer ark bash bc binutils cmatrix cmus conda cryfs deadbeef
+        devilspie2 dropbox efibootmgr exa zsh firejail gcc gdb gforth git
+        gnome3.gnome-tweaks gnumake gnupg gnuplot chromium gptfdisk handbrake
+        htop imagemagick kdialog keepassxc kvm ldc libreoffice-fresh lolcat
+        lsof lua lynx mpv neofetch neovim okular openssh p7zip pandoc pinta pv
+        qemu rc scrot stockfish cryptsetup texlive.combined.scheme-small tmux
+        transmission-gtk unrar unzip usbutils virtmanager weechat xorg.xhost
+        zip usbutils sxhkd ghc arc-theme scite R (import ./st.nix)
     ];
 
-    fonts.fonts = with pkgs;
-    [
-    iosevka
+    fonts.fonts = with pkgs; [
+        iosevka
     ];
 
     programs.adb.enable = true;
     programs.bash.enableCompletion = true;
     programs.zsh.enableCompletion = true;
-    programs.gnupg.agent = { enable = true; enableSSHSupport = true; };
+    programs.gnupg.agent = {
+        enable = true;
+        enableSSHSupport = true;
+    };
 
-    systemd.extraConfig = ''
-    DefaultTimeoutStopSec=10s
-    '';
-    systemd.user.services.mpd.enable = true;
+    systemd.extraConfig = ''DefaultTimeoutStopSec=10s'';
 
     #services.printing.drivers = [ pkgs.brgenml1cupswrapper ];
     services.printing.enable = true;
 
     services.xserver = {
-        desktopManager.plasma5.enable = true;
-        displayManager.sddm.enable = true;
+        desktopManager.gnome3.enable = true;
+        displayManager.gdm.enable = true;
         videoDrivers = [ "nvidia" ];
         enable = true;
         xkbOptions = "eurosign:e";
         layout = "us";
     };
 
-    services.postgresql.enable = true;
-    services.postgresql.package = pkgs.postgresql_11;
-
     services.cron = {
         enable = true;
         systemCronJobs = [
-        "*/5 * * * *      root    date >> /tmp/cron.log"
+            "*/5 * * * *      root    date >> /tmp/cron.log"
         ];
     };
 
