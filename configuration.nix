@@ -51,7 +51,7 @@
         lsof lua lynx mpv neofetch neovim okular openssh p7zip pandoc pinta pv
         qemu rc scrot stockfish cryptsetup texlive.combined.scheme-small tmux
         transmission-gtk unrar unzip usbutils virtmanager weechat xorg.xhost
-        zip usbutils sxhkd ghc arc-theme scite R (import ./st.nix)
+        zip usbutils sxhkd ghc leafpad R (import ./st.nix)
     ];
 
     fonts.fonts = with pkgs; [
@@ -74,6 +74,7 @@
     services.xserver = {
         desktopManager.gnome3.enable = true;
         displayManager.gdm.enable = true;
+        #displayManager.gdm.wayland = false;
         videoDrivers = [ "nvidia" ];
         enable = true;
         xkbOptions = "eurosign:e";
