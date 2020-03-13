@@ -51,7 +51,7 @@
         lsof lua lynx mpv neofetch neovim okular openssh p7zip pandoc pinta pv
         qemu rc scrot stockfish cryptsetup texlive.combined.scheme-small tmux
         transmission-gtk unrar unzip usbutils virtmanager weechat xorg.xhost
-        zip usbutils sxhkd ghc leafpad R (import ./st.nix)
+        zip usbutils sxhkd ghc leafpad R xfce4-14.thunar xfce4-14.tumbler xfce4-14.thunar-volman (import ./st.nix)
     ];
 
     fonts.fonts = with pkgs; [
