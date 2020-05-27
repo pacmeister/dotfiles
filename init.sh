@@ -8,9 +8,9 @@ DOTFILES=$(pwd)
 ##############
 # SUPER USER #
 ##############
-sudo cp configuration.nix /etc/nixos/configuration.nix
-sudo cp hosts /etc/nixos/hosts
-#sudo cp hosts /etc/hosts
+#sudo cp configuration.nix /etc/nixos/configuration.nix
+#sudo cp hosts /etc/nixos/hosts
+sudo cp hosts /etc/hosts
 
 ###############
 # NORMAL USER #
