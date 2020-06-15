@@ -41,6 +41,7 @@ export SAVEHIST=1111
 export HISTSIZE=1111
 #export GTK_USE_PORTAL=1
 export PLASMA_USE_QT_SCALING=1
+#export TERM=xterm-256color
 export LESS_TERMCAP_md=$'\e[01;31m'
 export LESS_TERMCAP_me=$'\e[0m'
 export LESS_TERMCAP_se=$'\e[0m'
