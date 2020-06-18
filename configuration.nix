@@ -46,7 +46,7 @@
     environment.systemPackages = with pkgs; [
         ack ahoviewer ark bash bc binutils cmatrix cmus conda cryfs deadbeef
         devilspie2 dropbox efibootmgr exa zsh firejail gcc gdb gforth git
-        gnome3.gnome-tweaks gnumake gnupg gnuplot chromium gptfdisk handbrake
+        gnumake gnupg gnuplot chromium gptfdisk handbrake
         htop imagemagick kdialog keepassxc kvm ldc libreoffice-fresh lolcat
         lsof lua lynx mpv neofetch neovim okular openssh p7zip pandoc pinta pv
         qemu rc scrot stockfish cryptsetup texlive.combined.scheme-small tmux
@@ -72,9 +72,8 @@
     services.printing.enable = true;
 
     services.xserver = {
-        desktopManager.gnome3.enable = true;
-        displayManager.gdm.enable = true;
-        displayManager.gdm.wayland = false;
+        desktopManager.plasma5.enable = true;
+        displayManager.sddm.enable = true;
         videoDrivers = [ "nvidia" ];
         enable = true;
         xkbOptions = "eurosign:e";
