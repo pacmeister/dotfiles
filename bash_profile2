@@ -1,0 +1,7 @@
+#
+# ~/.bash_profile
+#
+
+source /home/pac/.config/user-dirs.dirs
+[[ -f ~/.bashrc ]] && . ~/.bashrc
+if [ -e /home/pac/.nix-profile/etc/profile.d/nix.sh ]; then . /home/pac/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
