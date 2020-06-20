@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=cudatext
+GenericName=Editor
+Comment=cudatext
+Exec=/home/pac/store/bin/cudatext
+Terminal=false
+Type=Application
+Encoding=UTF-8
+Icon=/home/pac/store/tar/cudatext/cudatext-512.png
+Categories=Editor;
+Keywords=shell;prompt;command;commandline;cmd;

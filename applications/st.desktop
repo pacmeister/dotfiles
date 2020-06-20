@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=st-256color
+GenericName=Terminal
+Comment=Suckless terminal emulator for X
+Exec=/home/pac/store/bin/st -e tmux new-session -A -s main
+Terminal=false
+Type=Application
+Encoding=UTF-8
+Icon=utilities-terminal
+Categories=System;TerminalEmulator;
+Keywords=shell;prompt;command;commandline;cmd;
