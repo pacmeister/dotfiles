@@ -93,6 +93,6 @@
         extraGroups = [ "wheel" "networkmanager" "adbusers" "libvirt" ];
     };
 
-    system.stateVersion = "19.09";
+    system.stateVersion = "20.03";
     system.autoUpgrade.enable = true;
 }
