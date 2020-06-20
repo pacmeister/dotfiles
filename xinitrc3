@@ -1,0 +1,7 @@
+source /home/pac/.config/user-dirs.dirs &
+source /home/pac/.nix-profile/etc/profile.d/nix.sh &
+export XDG_CURRENT_DESKTOP=Budgie:GNOME
+export QT_FONT_DPI=128
+export PATH=/home/pac/bin:$PATH
+xinput set-prop "SINOWEALTH Wired Gaming Mouse" 'libinput Accel Profile Enabled' 0, 1
+exec budgie-desktop
