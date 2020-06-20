@@ -2,6 +2,8 @@
 
 {
     imports = [ ./hardware-configuration.nix ./extra_services.nix ];
+    networking.extraHosts = builtins.readFile ./hosts;
+
 
     hardware.cpu.intel.updateMicrocode = true;
     hardware.pulseaudio.enable = true;
@@ -12,7 +14,7 @@
 
     boot.kernelPackages = pkgs.linuxPackages_latest_hardened;
     boot.kernelModules = [ "fuse" "kvm-intel" "coretemp" ];
-    boot.supportedFilesystems = [ "xfs" "ext4" ];
+    boot.supportedFilesystems = [ "ext4" ];
 
     boot.loader = {
         efi = {
@@ -28,13 +30,12 @@
 
     networking.firewall.allowedTCPPorts = [ 3301 ];
     networking.firewall.allowedUDPPorts = [ 3301 ];
-    networking.hostName = "nixos";
+    networking.hostName = "nyx";
     networking.nameservers = [ "1.1.1.1" ];
     networking.networkmanager.enable = true;
-    networking.extraHosts = builtins.readFile ./hosts;
 
     i18n = {
-        consoleFont = "Lat2-Terminus16";
+       consoleFont = "Lat2-Terminus16";
         consoleKeyMap = "us";
         defaultLocale = "en_US.UTF-8";
     };
@@ -44,21 +45,22 @@
     nixpkgs.config.allowUnfree = true;
 
     environment.systemPackages = with pkgs; [
-        ack ahoviewer ark bash bc binutils cmatrix cmus conda cryfs deadbeef
-        devilspie2 dropbox efibootmgr exa zsh firejail gcc gdb gforth git
-        gnumake gnupg gnuplot chromium gptfdisk handbrake
-        htop imagemagick kdialog keepassxc kvm ldc libreoffice-fresh lolcat
-        lsof lua lynx mpv neofetch neovim okular openssh p7zip pandoc pinta pv
-        qemu rc scrot stockfish cryptsetup texlive.combined.scheme-small tmux
+        ack ahoviewer ark bash binutils cmatrix cmus conda cryfs deadbeef
+        devilspie2 efibootmgr exa zsh firejail gcc gdb gforth git
+        gnumake gnupg chromium gptfdisk handbrake
+        htop imagemagick kdialog keepassxc kvm libreoffice-fresh lolcat
+        lsof lua mpv neofetch neovim okular openssh p7zip pandoc pinta pv
+        qemu scrot stockfish cryptsetup texlive.combined.scheme-small tmux
         transmission-gtk unrar unzip usbutils virtmanager weechat xorg.xhost
-        zip usbutils sxhkd ghc leafpad R xfce4-14.thunar xfce4-14.tumbler xfce4-14.thunar-volman (import ./st.nix)
+        zip sxhkd ghc R 
+        (import ./st.nix)
+        (import ./cudatext.nix)
     ];
 
     fonts.fonts = with pkgs; [
         iosevka
     ];
 
-    programs.adb.enable = true;
     programs.bash.enableCompletion = true;
     programs.zsh.enableCompletion = true;
     programs.gnupg.agent = {
