@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 {
-    imports = [ ./hardware-configuration.nix ./extra_services.nix ];
+    imports = [ ./hardware-configuration.nix ]; #./extra_services.nix ];
     networking.extraHosts = builtins.readFile ./hosts;
 
 
@@ -45,14 +45,14 @@
     nixpkgs.config.allowUnfree = true;
 
     environment.systemPackages = with pkgs; [
-        ack ahoviewer ark bash binutils cmatrix cmus conda cryfs deadbeef
-        devilspie2 efibootmgr exa zsh firejail gcc gdb gforth git
-        gnumake gnupg chromium gptfdisk handbrake
-        htop imagemagick kdialog keepassxc kvm libreoffice-fresh lolcat
-        lsof lua mpv neofetch neovim okular openssh p7zip pandoc pinta pv
-        qemu scrot stockfish cryptsetup texlive.combined.scheme-small tmux
-        transmission-gtk unrar unzip usbutils virtmanager weechat xorg.xhost
-        zip sxhkd ghc R 
+        ack ahoviewer bash binutils cmatrix cmus conda cryfs deadbeef
+        devilspie2 efibootmgr exa zsh gcc gdb gforth git gnumake gnupg
+        firefox chromium gptfdisk handbrake htop imagemagick kdialog
+        keepassxc kvm libreoffice-fresh lolcat lsof lua mpv neofetch neovim
+        qpdfview openssh p7zip pandoc pinta pv qemu scrot cryptsetup
+        texlive.combined.scheme-small tmux transmission-gtk unrar unzip
+        usbutils virtmanager weechat xorg.xhost zip sxhkd ghc R
+        xfce.xfce4-whiskermenu-plugin
         (import ./st.nix)
         (import ./cudatext.nix)
     ];
@@ -72,10 +72,14 @@
 
     #services.printing.drivers = [ pkgs.brgenml1cupswrapper ];
     services.printing.enable = true;
+	services.fstrim.enable = true;
+    services.compton.enable = true;
+    services.compton.shadow = true;
+    services.compton.inactiveOpacity = "0.8";
 
     services.xserver = {
-        desktopManager.plasma5.enable = true;
-        displayManager.sddm.enable = true;
+        desktopManager.xfce.enable = true;
+        displayManager.startx.enable = true;
         videoDrivers = [ "nvidia" ];
         enable = true;
         xkbOptions = "eurosign:e";
@@ -97,4 +101,12 @@
 
     system.stateVersion = "20.03";
     system.autoUpgrade.enable = true;
+    programs.firejail = {
+        enable = true;
+        wrappedBinaries = {
+            firefox = "${pkgs.firefox}/bin/firefox";
+            mpv = "${pkgs.mpv}/bin/mpv";
+            chromium = "{pkgs.chromium}/bin/chromium";
+        };
+    };
 }

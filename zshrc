@@ -66,4 +66,4 @@ alias upgrade="sudo cp ~/git/dotfiles/configuration.nix /etc/nixos && sudo nix-c
 alias clear="clear && tmux clear-history"
 alias reboot="systemctl reboot"
 
-#source ~/.extras.sh
+source ~/.extras.sh

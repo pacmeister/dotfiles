@@ -1,7 +1,4 @@
-[[ -f ~/.bashrc ]] && . ~/.bashrc
+ . ~/.bashrc
+#dropbox &  
+source /home/pac/.config/user-dirs.dirs
 
-dropbox &  
-
-if [ -z "$DISPLAY" ] && [ -n "$XDG_VTNR" ] && [ "$XDG_VTNR" -eq 1 ]; then
-  exec startx
-fi

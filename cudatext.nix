@@ -26,14 +26,15 @@ stdenv.mkDerivation rec {
 
     installPhase = ''
 	chmod +x cudatext
-	mkdir -p $out/pkg
-	mv * $out/pkg
 	mkdir -p $out/pkg/settings
 	mkdir -p $out/bin
-	echo "#!/bin/sh 
-	../pkg/cudatext -s=~/.config/cudatext/settings
-	" > $out/bin/cudatext
-	chmod +x $out/bin/cudatext
+        cp cudatext $out/bin
+        cp cudatext $out/pkg/bin
+	mv * $out/pkg
+#echo "#!/bin/sh
+#	../pkg/cudatext -s=~/.config/cudatext/settings
+#	" > $out/bin/cudatext
+#	chmod +x $out/bin/cudatext
     '';
 
     meta = with stdenv.lib; {
