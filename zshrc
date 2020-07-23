@@ -65,5 +65,6 @@ alias tree="exa -T"
 alias upgrade="sudo cp ~/git/dotfiles/configuration.nix /etc/nixos && sudo nix-channel --update && sudo nix-collect-garbage -d && sudo nixos-rebuild switch --upgrade"
 alias clear="clear && tmux clear-history"
 alias reboot="systemctl reboot"
+alias acme="9 acme -f ~/.nix-profile/plan9/font/lucsans/latin1.13.font"
 
 source ~/.extras.sh

@@ -52,7 +52,8 @@
         qpdfview openssh p7zip pandoc pinta pv qemu scrot cryptsetup
         texlive.combined.scheme-small tmux transmission-gtk unrar unzip
         usbutils virtmanager weechat xorg.xhost zip sxhkd ghc R
-        xfce.xfce4-whiskermenu-plugin
+        xfce.xfce4-whiskermenu-plugin xfce.thunar-archive-plugin
+        xfce.thunar-volman gnome3.file-roller
         (import ./st.nix)
         (import ./cudatext.nix)
     ];
