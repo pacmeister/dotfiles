@@ -34,11 +34,9 @@
     networking.nameservers = [ "1.1.1.1" ];
     networking.networkmanager.enable = true;
 
-    i18n = {
-       consoleFont = "Lat2-Terminus16";
-        consoleKeyMap = "us";
-        defaultLocale = "en_US.UTF-8";
-    };
+    console.font = "Lat2-Terminus16";
+    console.keyMap = "us";
+    i18n.defaultLocale = "en_US.UTF-8";
 
     time.timeZone = "US/Eastern";
 
@@ -46,16 +44,15 @@
 
     environment.systemPackages = with pkgs; [
         ack ahoviewer bash binutils cmatrix cmus conda cryfs deadbeef
-        devilspie2 efibootmgr exa zsh gcc gdb gforth git gnumake gnupg
-        firefox chromium gptfdisk handbrake htop imagemagick kdialog
-        keepassxc kvm libreoffice-fresh lolcat lsof lua mpv neofetch neovim
-        qpdfview openssh p7zip pandoc pinta pv qemu scrot cryptsetup
-        texlive.combined.scheme-small tmux transmission-gtk unrar unzip
-        usbutils virtmanager weechat xorg.xhost zip sxhkd ghc R
-        xfce.xfce4-whiskermenu-plugin xfce.thunar-archive-plugin
-        xfce.thunar-volman gnome3.file-roller
-        (import ./st.nix)
-        (import ./cudatext.nix)
+            devilspie2 efibootmgr exa zsh gcc gdb gforth git gnumake gnupg
+            gptfdisk handbrake htop imagemagick kdialog
+            keepassxc kvm libreoffice-fresh lolcat lsof lua mpv neofetch neovim
+            qpdfview openssh p7zip pandoc pinta pv qemu scrot cryptsetup
+            texlive.combined.scheme-small tmux transmission-gtk unrar unzip
+            usbutils virtmanager vivaldi vivaldi-ffmpeg-codecs weechat xorg.xhost zip sxhkd ghc R
+            xfce.xfce4-whiskermenu-plugin xfce.thunar-archive-plugin
+            xfce.thunar-volman gnome3.file-roller
+            (import ./st.nix)
     ];
 
     fonts.fonts = with pkgs; [
@@ -71,9 +68,9 @@
 
     systemd.extraConfig = ''DefaultTimeoutStopSec=10s'';
 
-    #services.printing.drivers = [ pkgs.brgenml1cupswrapper ];
+#services.printing.drivers = [ pkgs.brgenml1cupswrapper ];
     services.printing.enable = true;
-	services.fstrim.enable = true;
+    services.fstrim.enable = true;
     services.compton.enable = true;
     services.compton.shadow = true;
     services.compton.inactiveOpacity = "0.8";
@@ -102,12 +99,4 @@
 
     system.stateVersion = "20.03";
     system.autoUpgrade.enable = true;
-    programs.firejail = {
-        enable = true;
-        wrappedBinaries = {
-            firefox = "${pkgs.firefox}/bin/firefox";
-            mpv = "${pkgs.mpv}/bin/mpv";
-            chromium = "{pkgs.chromium}/bin/chromium";
-        };
-    };
 }
