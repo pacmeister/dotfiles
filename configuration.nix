@@ -44,15 +44,15 @@
 
     environment.systemPackages = with pkgs; [
         ack ahoviewer bash binutils cmatrix cmus conda cryfs deadbeef
-            devilspie2 efibootmgr exa zsh gcc gdb gforth git gnumake gnupg
-            gptfdisk handbrake htop imagemagick kdialog
-            keepassxc kvm libreoffice-fresh lolcat lsof lua mpv neofetch neovim
-            qpdfview openssh p7zip pandoc pinta pv qemu scrot cryptsetup
-            texlive.combined.scheme-small tmux transmission-gtk unrar unzip
-            usbutils virtmanager vivaldi vivaldi-ffmpeg-codecs weechat xorg.xhost zip sxhkd ghc R
-            xfce.xfce4-whiskermenu-plugin xfce.thunar-archive-plugin
-            xfce.thunar-volman gnome3.file-roller
-            (import ./st.nix)
+        devilspie2 efibootmgr exa zsh gcc gdb gforth git gnumake gnupg
+        chromium gptfdisk handbrake htop imagemagick kdialog
+        keepassxc kvm libreoffice-fresh lolcat lsof lua mpv neofetch neovim
+        qpdfview openssh p7zip pandoc pinta pv qemu scrot cryptsetup
+        texlive.combined.scheme-small tmux transmission-gtk unrar unzip
+        usbutils virtmanager vivaldi vivaldi-ffmpeg-codecs weechat xorg.xhost zip sxhkd ghc R
+        xfce.xfce4-whiskermenu-plugin xfce.thunar-archive-plugin
+        xfce.thunar-volman gnome3.file-roller
+        (import ./st.nix)
     ];
 
     fonts.fonts = with pkgs; [
@@ -68,7 +68,7 @@
 
     systemd.extraConfig = ''DefaultTimeoutStopSec=10s'';
 
-#services.printing.drivers = [ pkgs.brgenml1cupswrapper ];
+    #services.printing.drivers = [ pkgs.brgenml1cupswrapper ];
     services.printing.enable = true;
     services.fstrim.enable = true;
     services.compton.enable = true;
