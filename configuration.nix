@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 {
-    imports = [ ./hardware-configuration.nix ]; #./extra_services.nix ];
+    imports = [ ./hardware-configuration.nix ./extra_services.nix ];
     networking.extraHosts = builtins.readFile ./hosts;
 
 
