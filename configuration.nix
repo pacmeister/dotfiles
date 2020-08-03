@@ -17,6 +17,7 @@
     boot.supportedFilesystems = [ "ext4" ];
 
     boot.loader = {
+        timeout = -1;
         efi = {
             canTouchEfiVariables = true;
             efiSysMountPoint = "/boot/";
