@@ -17,7 +17,7 @@
     boot.supportedFilesystems = [ "ext4" ];
 
     boot.loader = {
-        timeout = -1;
+        timeout = 0;
         efi = {
             canTouchEfiVariables = true;
             efiSysMountPoint = "/boot/";
@@ -44,15 +44,15 @@
     nixpkgs.config.allowUnfree = true;
 
     environment.systemPackages = with pkgs; [
-        ack ahoviewer bash binutils cmatrix cmus conda cryfs deadbeef
-        devilspie2 efibootmgr exa zsh gcc gdb gforth git gnumake gnupg
-        chromium gptfdisk handbrake htop imagemagick kdialog
-        keepassxc kvm libreoffice-fresh lolcat lsof lua mpv neofetch neovim
-        qpdfview openssh p7zip pandoc pinta pv qemu scrot cryptsetup
+        ack ahoviewer bash binutils chromium cmatrix cmus conda cryfs
+        cryptsetup deadbeef devilspie2 efibootmgr exa gcc gdb gforth ghc git
+        gnome3.file-roller gnumake gnupg gptfdisk handbrake htop imagemagick
+        kdialog keepassxc kvm libreoffice-fresh lolcat lsof lua mpv neofetch
+        neovim openssh p7zip pandoc pinta pv qemu qpdfview R scrot sxhkd
         texlive.combined.scheme-small tmux transmission-gtk unrar unzip
-        usbutils virtmanager vivaldi vivaldi-ffmpeg-codecs weechat xorg.xhost zip sxhkd ghc R
-        xfce.xfce4-whiskermenu-plugin xfce.thunar-archive-plugin
-        xfce.thunar-volman gnome3.file-roller
+        usbutils virtmanager vivaldi vivaldi-ffmpeg-codecs vivaldi-widevine
+        weechat xclip xfce.thunar-archive-plugin xfce.thunar-volman
+        xfce.xfce4-whiskermenu-plugin xorg.xhost zip zsh
         (import ./st.nix)
     ];
 
