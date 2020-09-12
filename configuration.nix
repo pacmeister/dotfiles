@@ -44,15 +44,15 @@
     nixpkgs.config.allowUnfree = true;
 
     environment.systemPackages = with pkgs; [
-        ack ahoviewer bash binutils chromium cmatrix cmus conda cryfs
+        ahoviewer bash binutils chromium cmatrix cmus conda cryfs
         cryptsetup deadbeef devilspie2 efibootmgr exa gcc gdb gforth ghc git
         gnome3.file-roller gnumake gnupg gptfdisk handbrake htop imagemagick
         kdialog keepassxc kvm libreoffice-fresh lolcat lsof lua mpv neofetch
         neovim openssh p7zip pandoc pinta pv qemu qpdfview R scrot sxhkd
         texlive.combined.scheme-small tmux transmission-gtk unrar unzip
         usbutils virtmanager vivaldi vivaldi-ffmpeg-codecs vivaldi-widevine
-        weechat xclip xfce.thunar-archive-plugin xfce.thunar-volman
-        xfce.xfce4-whiskermenu-plugin xorg.xhost zip zsh
+        weechat xclip xfce.thunar xfce.thunar-archive-plugin xfce.thunar-volman
+        xorg.xhost zip zsh ripgrep
         (import ./st.nix)
     ];
 
@@ -77,8 +77,9 @@
     services.compton.inactiveOpacity = "0.8";
 
     services.xserver = {
-        desktopManager.xfce.enable = true;
-        displayManager.startx.enable = true;
+        desktopManager.gnome3.enable = true;
+        #displayManager.startx.enable = true;
+        displayManager.gdm.enable = true;
         videoDrivers = [ "nvidia" ];
         enable = true;
         xkbOptions = "eurosign:e";
