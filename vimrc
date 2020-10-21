@@ -1,5 +1,6 @@
 set runtimepath=~/.config/vim
 set packpath=~/.config/vim
+set viminfo=
 autocmd BufWritePre * %s/\s\+$//e
 execute pathogen#infect()
 filetype plugin indent on
