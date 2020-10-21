@@ -52,7 +52,7 @@ unset SSH_ASKPASS
 
 map(){ for i in $(<&0); do $@ $i; done }
 
-alias vi="nvim"
+alias vi="vim"
 alias find="du -a | awk '{print \$2}' | grep"
 alias cp="rsync -P"
 alias cd="pushd > /dev/null"
@@ -65,3 +65,5 @@ alias upgrade="sudo cp ~/git/dotfiles/configuration.nix /etc/nixos && sudo nix-c
 alias clear="clear && tmux clear-history"
 
 # source ~/.extras.sh
+if [ -e /home/pac/.nix-profile/etc/profile.d/nix.sh ]; then . /home/pac/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+export PATH=/home/pac/.local/bin:$PATH
