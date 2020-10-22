@@ -54,7 +54,7 @@ unset SSH_ASKPASS
 map(){ for i in $(<&0); do $@ $i; done }
 dd(){ sudo dd if=$1 of=$2 bs=1M status=progress oflag=sync }
 
-alias vi="nvim"
+alias vi="vim"
 alias find="du -a | awk '{print \$2}' | grep"
 alias cp="rsync -P"
 alias cd="pushd > /dev/null"
