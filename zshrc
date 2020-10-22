@@ -52,6 +52,7 @@ export LESS_TERMCAP_us=$'\e[01;32m'
 unset SSH_ASKPASS
 
 map(){ for i in $(<&0); do $@ $i; done }
+dd(){ sudo dd if=$1 of=$2 bs=1M status=progress oflag=sync }
 
 alias vi="nvim"
 alias find="du -a | awk '{print \$2}' | grep"
