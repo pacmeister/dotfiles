@@ -27,7 +27,7 @@ ln -f -s $DOTFILES/zshrc ~/.zshrc
 ################
 # VIM PACKAGES #
 ################
-vimpath=~/.config/nvim
+vimpath=~/.config/vim
 # Pathogen
 mkdir -p $vimpath/autoload $vimpath/bundle && \
 curl -LSso $vimpath/autoload/pathogen.vim https://tpo.pe/pathogen.vim

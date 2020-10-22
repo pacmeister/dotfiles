@@ -1,4 +1,4 @@
-set runtimepath=~/.config/vim
+set runtimepath=~/.config/vim,/usr/share/vim,/usr/share/vim/vim82
 set packpath=~/.config/vim
 set viminfo=
 execute pathogen#infect()
