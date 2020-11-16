@@ -1,0 +1,4 @@
+export XDG_CURRENT_DESKTOP=Budgie:GNOME
+exec budgie-desktop
+xrandr --output DP-2 --primary --scale 1.25x1.25 --pos 0x0 --auto \
+--output HDMI-0 --rotate left --pos 3840x0 --auto --scale 1x1
