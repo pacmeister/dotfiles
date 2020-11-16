@@ -48,11 +48,11 @@
         cryptsetup deadbeef devilspie2 efibootmgr exa gcc gdb gforth ghc git
         gnome3.file-roller gnumake gnupg gptfdisk handbrake htop imagemagick
         kdialog keepassxc kvm libreoffice-fresh lolcat lsof lua mpv neofetch
-        neovim openssh p7zip pandoc pinta pv qemu qpdfview R scrot sxhkd
+        neovim openssh p7zip pandoc pinta pv qemu qpdfview R ripgrep scrot sxhkd
         texlive.combined.scheme-small tmux transmission-gtk unrar unzip
         usbutils virtmanager vivaldi vivaldi-ffmpeg-codecs vivaldi-widevine
         weechat xclip xfce.thunar xfce.thunar-archive-plugin xfce.thunar-volman
-        xorg.xhost zip zsh ripgrep
+        xorg.xhost zip zsh
         (import ./st.nix)
     ];
 
@@ -77,9 +77,8 @@
     services.compton.inactiveOpacity = "0.8";
 
     services.xserver = {
-        desktopManager.gnome3.enable = true;
+        desktopManager.xfce.enable = true;
         #displayManager.startx.enable = true;
-        displayManager.gdm.enable = true;
         videoDrivers = [ "nvidia" ];
         enable = true;
         xkbOptions = "eurosign:e";
