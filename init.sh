@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 cd $(dirname $0)
 DOTFILES=$(pwd)
@@ -20,7 +20,7 @@ DOTFILES=$(pwd)
 #ln -f -s xmobarrc ~/.xmobarrc
 #ln -f -s xmonad ~/.xmonad
 ln -f -s $DOTFILES/bash_profile ~/.bash_profile
-ln -f -s $DOTFILES/init.vim ~/.vimrc
+ln -f -s $DOTFILES/vimrc ~/.vimrc
 ln -f -s $DOTFILES/tmux.conf ~/.tmux.conf
 ln -f -s $DOTFILES/zshrc ~/.zshrc
 
@@ -38,8 +38,13 @@ git clone https://github.com/jnurmine/Zenburn
 cp -r Zenburn/colors $vimpath
 
 # other plugins
-repos=( https://github.com/justinmk/vim-dirvish https://github.com/tpope/vim-commentary https://github.com/tpope/vim-surround https://github.com/itchyny/lightline.vim )
+repos=( 
+        'https://github.com/justinmk/vim-dirvish'
+        'https://github.com/tpope/vim-commentary'
+        'https://github.com/tpope/vim-surround' 
+        'https://github.com/itchyny/lightline.vim' 
+    )
 cd $vimpath/bundle
-for r in "{repos[@]}" do
+for r in $repos; do
     git clone $r
 done
