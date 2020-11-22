@@ -33,7 +33,7 @@ bindkey "^[[A" up-line-or-beginning-search
 bindkey "^[[B" down-line-or-beginning-search
 bindkey "^[[3~" delete-char
 
-export PATH=~/store/bin:$PATH
+export PATH=~/.local/bin:$PATH
 export VISUAL=nvim
 export EDITOR=nvim
 export HISTFILE=~/.histfile
