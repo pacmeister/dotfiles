@@ -46,7 +46,7 @@
     nixpkgs.config.allowUnfree = true;
 
     environment.systemPackages = with pkgs; [
-        ahoviewer bash binutils chromium cmatrix cmus conda
+        ahoviewer bash binutils cmatrix cmus conda
         cryptsetup deadbeef devilspie2 efibootmgr exa gcc gdb gforth ghc git
         gnome3.file-roller gnumake gnupg gptfdisk handbrake htop imagemagick
         keepassxc kvm libreoffice-fresh lolcat lsof lua mpv openssh p7zip
